@@ -25,7 +25,7 @@ class Election {
   set (...numbers) {
     this.partyVotes = numbers
   }
-  calcPartyVotes () {
+  /*calcPartyVotes () {
     this.set(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     for (let anElectorate of this.allMyElecorates) {
       for (let i = 0; i < anElectorate.electorateVotes.length; i++) {
@@ -35,10 +35,10 @@ class Election {
     for (let i = 0; i < this.allMyParties.length; i++) {
       this.allMyParties[i].votes = this.partyVotes[i]
     }
-  }
+  }*/
   getParties () {
     let result1 = ''
-    this.calcPartyVotes()
+    //this.calcPartyVotes()
     for (let aParty of this.allMyParties) {
       result1 += View.TAB() + aParty + View.NEWLINE()
   	}
