@@ -23,10 +23,15 @@ class Electorate {
 		}
 	}	
 	addPartyVotes (...allPartyVotes) {
-		for (let aPartyVote of allPartyVotes) {
-			this.electorateVotes.push (aPartyVote)
+		this.electorateVotes = new Map ()
+		let totalVotes = allPartyVotes
+		let voteParties = this.theElection.allMyParties
+		for (let i =0; i < 16; i++) {
+			this.electorateVotes.set(voteParties[i], totalVotes[i])
 		}
-	  return this.electorateVotes
+		for(let aParty of voteParties) {
+			aParty.votes += this.electorateVotes.get(aParty)
+		}
 	}
 	toString () {
 		return this.name + View.TAB() + 'The winning MP: ' + '(' + this.MP + ', ' + this.winParty + ')'
